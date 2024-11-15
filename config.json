@@ -1,0 +1,9 @@
+{
+    "SPOTIFY_CLIENT_ID": "5b8942c1bca642c2978c541223d631e5",
+    "SPOTIFY_CLIENT_SECRET": "1eba879a70d140b4ba7e06aeeab8493d",
+    "INSTAGRAM_CLIENT_ID": "your_instagram_client_id",
+    "INSTAGRAM_CLIENT_SECRET": "your_instagram_client_secret",
+    "X_CLIENT_ID": "your_x_client_id",
+    "X_CLIENT_SECRET": "your_x_client_secret",
+    "REDIRECT_URI": "http://localhost:3000/callback"
+}

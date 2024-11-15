@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media API Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Connect Your Social Media</h1>
+        <button id="spotifyConnect">Spotify Bağla</button>
+        <button id="instagramConnect">Instagram Bağla</button>
+        <button id="xConnect">X Bağla</button>
+
+        <h2>Dinlenilen Müzik:</h2>
+        <p id="spotifyData">Henüz giriş yapılmadı</p>
+
+        <h2>Instagram Takipleri:</h2>
+        <p id="instagramData">Henüz giriş yapılmadı</p>
+
+        <h2>X Takipleri:</h2>
+        <p id="xData">Henüz giriş yapılmadı</p>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Giriş butonları için yönlendirmeler
+        document.getElementById('spotifyConnect').onclick = () => {
+            window.location.href = '/spotify/auth';
+        };
+        document.getElementById('instagramConnect').onclick = () => {
+            window.location.href = '/instagram/auth';
+        };
+        document.getElementById('xConnect').onclick = () => {
+            window.location.href = '/x/auth';
+        };
+
+        // Verileri almak ve sayfada göstermek için
+        async function fetchData() {
+            const response = await fetch('/data');
+            const data = await response.json();
+            document.getElementById('spotifyData').textContent = data.spotify || 'Henüz giriş yapılmadı';
+            document.getElementById('instagramData').textContent = data.instagram || 'Henüz giriş yapılmadı';
+            document.getElementById('xData').textContent = data.x || 'Henüz giriş yapılmadı';
+        }
+
+        // Sayfa yüklendiğinde verileri çek
+        fetchData();
+
+        // Her 3 saniyede bir Spotify verisini güncellemek için setInterval kullanıyoruz
+        setInterval(fetchData, 3000); // 3000 ms = 3 saniye
+    </script>
+</body>
+</html>
