@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify API Test</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Connect to Spotify</h1>
+        <button id="spotifyConnect">Connect Spotify</button>
+
+        <div id="userProfile" class="profile-section" style="display: none;">
+            <h2>Your Profile:</h2>
+            <div id="profileData"></div>
+        </div>
+
+        <div id="currentlyPlaying" class="track-section" style="display: none;">
+            <h2>Currently Playing:</h2>
+            <div id="spotifyData"></div>
+        </div>
+
+        <div id="actions" class="actions-section" style="display: none;">
+            <h2>Actions:</h2>
+            <button id="playTrack">Play Track</button>
+            
+            <div class="playlist-action">
+                <select id="playlistSelect" class="playlist-select">
+                    <option value="">Select a playlist...</option>
+                </select>
+                <button id="addToPlaylist" disabled>Add to Playlist</button>
+            </div>
+
+            <button id="followArtist">Follow Artist</button>
+            <button id="followPlaylist">Follow Playlist</button>
+            <button id="addToFavorites">Add to Favorites</button>
+        </div>
+
+        <div id="playlists" class="playlists-section" style="display: none;">
+            <h2>Your Playlists:</h2>
+            <div id="playlistsData"></div>
+        </div>
+
+        <div id="artists" class="artists-section" style="display: none;">
+            <h2>Followed Artists:</h2>
+            <div id="artistsData"></div>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html> 
