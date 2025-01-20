@@ -32,7 +32,7 @@ This repository demonstrates a web application that integrates with the Spotify 
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd api-test
+   cd Spotfiy-Api-Integration
    ```
 2. Install dependencies:
    ```bash
